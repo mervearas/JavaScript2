@@ -1,21 +1,16 @@
-/**
-
- ** Exercise 1: The odd ones out **
-
- Rewrite the following function using map and filter. 
- Avoid using for loop or forEach.
- The function should still behave the same.
-
- */
-function doubleEvenNumbers(numbers) {
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-      newNumbers.push(numbers[i] * 2);
-    }
-  }
-  return newNumbers;
-}
-
+'use strict'
+// find even numbers
 const myNumbers = [1, 2, 3, 4];
-console.log(doubleEvenNumbers(myNumbers)); // Logs "[4, 8]" to the console
+const evenNumbers = myNumbers.filter(function(numbers) {
+  if (numbers % 2 === 0){
+   return numbers
+  }
+});
+
+// multiply by 2
+const result = evenNumbers.map(function(number){
+  return number * 2;
+})
+
+console.log(evenNumbers);
+console.log(result);

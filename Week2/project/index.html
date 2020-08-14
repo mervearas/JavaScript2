@@ -5,11 +5,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Clock</title>
+  <script src="https://use.fontawesome.com/9c4c365b56.js"></script>
+
+  <style>
+    body {
+      background-color: lightsalmon;
+      color: white;
+      font-size: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+
+    #buttons {
+      display: flex;
+      flex-direction: row;
+      height: 25px;
+      align-items: center;
+
+    }
+
+    #minute {
+      padding: 30px;
+    }
+
+    #countdown, #countup { 
+      padding: 5px;
+    }
+
+    #display {
+      border: 5px solid salmon;
+      margin: 3%;
+      border-radius: 20px;
+      padding:0px 100px;
+    }
+
+    #timer-control {
+      display: flex;
+      flex-direction: row;
+      height:30px;
+      justify-content: space-between;
+    }
+
+    #play, #pause {
+      margin:0 15px;
+    }
+
+    button:hover {
+      cursor:pointer;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-
+    <p id= "title">Promodoro Clock</p>
+    <p id= "subtitle">Session Length</p>
+    <div id="buttons">
+      <button id= "countDown">
+        <i class="fa fa-arrow-down"></i>
+      </button>
+      <p id= "minute"> 0 </p>
+      <button id= "countUp">
+        <i class="fa fa-arrow-up"></i>
+      </button>
+    </div> 
+    <div id="display">
+      <p id= "session">Session</p>
+      <p id= "timer">00:00</p>
+    </div>
+    <div id="timer-control">
+      <button id= "play">
+        <i class="fa fa-play"></i>
+      </button>
+      <button id= "stop">
+        <i class="fa fa-stop"></i>
+      </button>
+      <button id= "pause">
+        <i class="fa fa-pause"></i>
+      </button>
+      <button id= "resume">
+        <i class="fa  fa-play"></i>
+      </button>
+    </div>
   </div>
   <script src="index.js"></script>
 </body>

@@ -62,7 +62,6 @@ function startSession(){
 
     let sessionTimeSplited = sessionTime.split(":");
     let duration = (parseInt(sessionTimeSplited[0]) * 60) + parseInt(sessionTimeSplited[1]);
-    console.log(duration)
     
     taskInterval = setInterval(function(){
       let minute = Math.floor(duration / 60);
@@ -81,8 +80,6 @@ function pauseSession(){
     status = "paused";
     pauseButton.style = "display:none";
     resumeButton.style = "display:static";
-  } else {
-    startSession();
   }
 }
 

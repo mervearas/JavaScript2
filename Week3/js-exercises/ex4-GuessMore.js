@@ -1,10 +1,9 @@
 /**
 
-** Exercise 4: Guess more **
-
-Look at the bellow code snippet.
-Can you guess the output? 
-Write out your reasoning in 50 words or less.
+Variable x is assigned 9 in the global scope. Function f1 gets the val and adds one to val and reassings the val.
+But this action does not reaassign the variable x. So the result is going to be 9.
+The second function f2 accepts object as val and adds 1 to the x property and reassigns x.
+This action is going to update the object property(y.x) and the result is going to be 10
 
 */
 

@@ -5,10 +5,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tip Calculator</title>
+  <style>
+    body{
+      background-color: bisque;
+      display: flex;
+      justify-content: center;
+      padding: 10% 0;
+      box-sizing: border-box;
+    }
+
+    .tip_calculator {
+      background-color: white;
+      width: 30%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      border-radius: 0 0 8% 8%;
+      box-shadow: 1px 2px 8px 0px rgba(0,0,0,0.48);
+    }
+
+    .divider {
+      border-bottom: 1px solid gray;
+      width: 100%;
+    }
+
+    .tip_calculator_content {
+      padding: 2% 5%;
+    }
+
+    input {
+      height: 2rem;
+      font-size: 1rem;
+    }
+
+    .dolar {
+      font-size: 2rem;
+    }
+
+    .button_container {
+      text-align: center;
+      padding: 5% 0;
+    }
+
+    button {
+      height: 2rem;
+      width: auto;
+      color: white;
+      background-color: #ffaa71;
+      border: none;
+      box-shadow: inset 1px 2px 2px 0px rgba(0,0,0,0.75);
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    #tip_display {
+      text-align: center;
+    }
+
+    #app {
+      background-color: darkslategray;
+      color: white;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+  </style>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div class="tip_calculator">
+    <div id="app"></div>
+    <span class="divider"></span>
+    <div class="tip_calculator_content">
+      <div>
+        <h3>How much was your bill?</h3>
+        <span class="dolar">$</span>
+        <input id="amount" type="number"/>
+      </div>
+      <div>
+        <h3>How was your service?</h3>
+        <select id="service_selection">
+          <option value ="0" selected disabled>Choose an Option</option>
+          <option value="30">30% - Outstanding</option>
+          <option value="20">20% - Good</option>
+          <option value="15">15% - It was OK</option>
+          <option value="10">10% - Bad</option>
+          <option value="5">5% - Terrible</option>
+        </select>
+      </div>
+      <div>
+        <h3>How many people are sharing the bill?</h3>
+        <input id="people" type="number"/>
+        <span>people</span>
+      </div>
+      <div class="button_container">
+        <button id="calculate_button">CALCULATE!</button>
+      </div>
+      <div id="tip_display">
+        <h2>TIP AMOUNT</h2>
+        <h2 id="tip_amount" class="dolar"></h2>
+        <h3 id="each">each</h3>
+      </div>
+    </div>
+  </div>
   <script src="index.js"></script>
 </body>
 

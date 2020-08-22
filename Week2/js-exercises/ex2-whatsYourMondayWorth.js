@@ -4,12 +4,12 @@ function dayWorth(tasks, hourlyRate) {
   // put your code in here, the function does returns a euro formatted string
   let earnedAmount = 0;
 
-  tasks.map(function(task){
+  tasks.forEach(function(task){
     const totalPrice = (task.duration / 60) * hourlyRate;
     earnedAmount = earnedAmount + totalPrice;
   });
 
-  return earnedAmount.toFixed(2);
+  return "\u20AC" + earnedAmount.toFixed(2);
 }
 
 

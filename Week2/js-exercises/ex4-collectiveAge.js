@@ -3,7 +3,7 @@
 function collectiveAge(people) {
   // return the sum of age for all the people
   let totalAge= 0;
-  people.map(function(person){
+  people.forEach(function(person){
    totalAge = totalAge + person.age;
   })
   return totalAge;

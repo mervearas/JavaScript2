@@ -19,15 +19,27 @@ let currentPosition = 0;
 let endPosition = window.innerWidth - img.width;
 
 img.style.left = currentPosition + 'px';
+let catWalking = false;
 
 function catWalk() {
-    currentPosition = currentPosition + 10;
+  catWalking = true;
+  currentPosition = currentPosition + 10;
 
-    if(currentPosition >= endPosition) {
-        currentPosition = 0;
-    }
+  if (catWalking && currentPosition === (Math.round(endPosition / 10) * 10) / 2) {
+    img.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif?itemid=10561424';
+    clearInterval(interval);
+    setTimeout(function () {
+      interval = setInterval(catWalk, 50);
+      img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+    }, 5000);
+  }
 
-    img.style.left = currentPosition + 'px';
+  if (currentPosition >= endPosition) {
+    currentPosition = 0;
+  }
+  
+  img.style.left = currentPosition + 'px';
 }
 
-setInterval(catWalk, 50);
+let interval = setInterval(catWalk, 50);
+

@@ -13,8 +13,8 @@
 
 function displayCurrentTime() {
   // your code goes in here
-    const currentTime = new Date().toLocaleTimeString();
-    document.body.innerHTML = currentTime;
+  const currentTime = new Date().toLocaleTimeString('nl-nl');
+  document.body.innerHTML = currentTime;
 }
 
 setInterval(displayCurrentTime, 1000);

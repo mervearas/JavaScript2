@@ -35,15 +35,22 @@ function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
   console.log(numbers);
 
   for(let i = 0; i < numbers.length; i++){
-    if ( numbers[i] % 3 === 0 && numbers[i] % 5 !== 0 ) {
+    if ( numbers[i] % 3 === 0) {
       threeCallback();
-    } else if ( numbers[i] % 5 === 0 && numbers[i] % 3 !== 0) {
-      fiveCallback();
-    } else if ( numbers[i] % 3 === 0 && numbers[i] % 5 === 0 ) {
-      threeCallback();
-      fiveCallback();
     }
+    
+    if (numbers[i] % 5 === 0) {
+      fiveCallback();
+    } 
   }
+}
+
+function sayThree() {
+  console.log('3');
+}
+
+function sayFive() {
+  console.log('5');
 }
 
 threeFive(10, 15, sayThree, sayFive);
